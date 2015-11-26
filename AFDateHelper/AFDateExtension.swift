@@ -251,13 +251,27 @@ public extension NSDate {
     Compares dates to see if they are in the same year.
     
     :param: date :NSDate Date to compare.
-    :returns: :Bool Returns true if date is this week.
+    :returns: :Bool Returns true if date is same year.
     */
     func isSameYearAsDate(date: NSDate) -> Bool
     {
         let comp1 = NSDate.components(fromDate: self)
         let comp2 = NSDate.components(fromDate: date)
         return (comp1.year == comp2.year)
+    }
+    
+    /**
+     Compares dates to see if they are in the same month.
+     
+     :param: date :NSDate Date to compare.
+     :returns: :Bool Returns true if date is same month.
+     */
+    func isSameMonthAsDate(date: NSDate) -> Bool
+    {
+        let comp1 = NSDate.components(fromDate: self)
+        let comp2 = NSDate.components(fromDate: date)
+
+        return (comp1.year == comp2.year && comp1.month == comp2.month)
     }
     
     /**
