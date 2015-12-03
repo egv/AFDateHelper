@@ -352,7 +352,34 @@ public extension NSDate {
     
     
     // MARK: Adjusting Dates
+
+    /**
+    Returns a new NSDate object by a adding months.
     
+    :param: days :Int Moths to add.
+    :returns: NSDate
+    */
+    func dateByAddingMonths(months: Int) -> NSDate
+    {
+        let dateComp = NSDateComponents()
+        dateComp.month = months
+        return NSCalendar.currentCalendar().dateByAddingComponents(dateComp, toDate: self, options: NSCalendarOptions(rawValue: 0))!
+    }
+
+    
+    /**
+     Returns a new NSDate object by a substracting months.
+     
+     :param: days :Int Months to substract.
+     :returns: NSDate
+     */
+    func dateBySubtractingMonths(months: Int) -> NSDate
+    {
+        let dateComp = NSDateComponents()
+        dateComp.month = (months * -1)
+        return NSCalendar.currentCalendar().dateByAddingComponents(dateComp, toDate: self, options: NSCalendarOptions(rawValue: 0))!
+    }
+
     /**
     Returns a new NSDate object by a adding days.
     
